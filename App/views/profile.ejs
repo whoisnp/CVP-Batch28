@@ -1,0 +1,61 @@
+<title>My Bands | Profile</title>
+<% include ('./partials/nav') %>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-user"></i>Profile</h1>
+      <%- include ('./partials/messages') %>
+      <form
+        action="/users/user/<%= user.uid %>"
+        method="POST"
+        id="updateProfile"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            value="<%= user.name %>"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            value="<%= user.email %>"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date Of Birth</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            class="form-control"
+            value="<%= user.dob %>"
+          />
+        </div>
+      </form>
+
+      <div style="display: block ruby; margin-top: 4%">
+        <div>
+          <form action="/appointments">
+            <button type="submit" class="btn btn-info">Back</button>
+          </form>
+        </div>
+        <div style="float: right; display: block ruby">
+          <button type="submit" form="updateProfile" class="btn btn-primary">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

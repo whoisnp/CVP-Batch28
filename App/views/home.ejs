@@ -1,0 +1,21 @@
+<title>My Bands | Home </title>
+<%- include ('./partials/nav') %>
+
+<br>
+<div class="list-group">
+
+  <% appointments.forEach( (appointment) => { %>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+<div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%= appointment.name %></h5>
+
+      <h5>
+        Dose : <%= appointment.Dose %>
+      </h5>
+
+    </div>
+    <small class="mb-1"><%= appointment.date%></small>
+  </a>
+  <% }); %>
+
+</div>

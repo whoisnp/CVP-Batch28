@@ -1,0 +1,73 @@
+<title>My Bands | Add appointment </title>
+<% include ('./partials/nav') %>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"><i class="far fa-plus-square"></i> Add appointment </h1>
+            <%- include ('./partials/messages') %>
+            <form action="/appointments/band" method="POST" id="addBand">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" 
+                        placeholder="Enter Your Name" 
+                        value="<%= typeof band != 'undefined' ? band.name : '' %>"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Date">Date</label>
+                    <input type="date" id="date" name="date" class="form-control"
+                        placeholder="Enter Date" 
+                        value="<%= typeof band != 'undefined' ? band.date : '' %>"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="Vaccine">Vaccine name</label>
+                    <select name="Vaccine" id="Vaccine" class="form-control">
+                        <% if(typeof band == 'undefined' || band.Vaccine == '') { %>
+                        <option value="" selected hidden>Vaccine</option>
+                        <% } else { %>
+                        <option value="<%= band.Vaccine %>" selected disabled hidden> 
+                                <%= band.Vaccine%>
+                        <% } %>        
+                        <option value="Covaxine">Covaxine</option>
+                        <option value="CovidSheild">CovidSheild</option>
+                        <option value="Sputnik">Sputnik</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Dose">Dose</label>
+                    <select name="Dose" id="Dose" class="form-control">
+                        <% if(typeof band == 'undefined' || band.Dose == '') { %>
+                        <option value="" selected hidden>Dose</option>
+                        <% } else { %>
+                        <option value="<%= band.rating %>" selected disabled hidden> 
+                                <%= band.Dose%>
+                        <% } %>        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+            </form>
+
+            <div style="display: block ruby; margin-top: 4%">     
+                    <div >
+                        <form action="/appointments" >
+                            <button type="submit" class="btn btn-info ">Back</button>
+                        </form>
+                    </div> 
+                    <div style="float: right; display: block ruby">
+                        <button type="submit" form="addBand" class="btn btn-primary ">Add</button>
+                    </div>
+            
+                </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>

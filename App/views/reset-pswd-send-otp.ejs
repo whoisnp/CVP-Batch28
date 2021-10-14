@@ -1,0 +1,30 @@
+<title>My Bands | Reset Password </title>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+            <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i> Reset Password </h1>
+            <%- include ('./partials/messages') %>
+            <form action="/users/reset-pswd-send-otp" method="POST">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter Email"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send OTP</button>
+              </form>
+
+              <p class="lead mt-4">
+                    Have an Account? <a href="/login">LogIn</a>
+                </p>
+              <p class="lead" ">
+                    No Account? <a href="/register">Register</a>
+                  </p>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,4 @@
+const SENDGRID_API_KEY =
+  "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";
+
+module.exports = { SENDGRID_API_KEY };
