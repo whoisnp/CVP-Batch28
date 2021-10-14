@@ -1,0 +1,15 @@
+version: "3.4"
+services:
+  API:
+    image: api:latest
+    container_name: api
+    restart: always
+    ports:
+      - "3000:3000"
+
+  APP:
+    image: app:latest
+    container_name: app
+    restart: always
+    ports:
+      - "3001:3001"
